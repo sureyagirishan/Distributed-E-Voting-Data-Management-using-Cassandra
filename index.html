@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed E-Voting Data Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">E-Voting System</h1>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#voting">Vote</a></li>
+                    <li><a href="#analytics">Analytics</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Distributed E-Voting Management</h2>
+                <p>Secure, scalable, and transparent voting using Cassandra</p>
+            </div>
+        </section>
+
+        <section id="voting" class="voting-section">
+            <div class="container">
+                <h3>Cast Your Vote</h3>
+                <form class="voting-form">
+                    <div class="form-group">
+                        <label for="voter-id">Voter ID:</label>
+                        <input type="text" id="voter-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="candidate">Select Candidate:</label>
+                        <select id="candidate" required>
+                            <option value="">-- Select Candidate --</option>
+                            <option value="candidate1">Candidate 1</option>
+                            <option value="candidate2">Candidate 2</option>
+                            <option value="candidate3">Candidate 3</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Submit Vote</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="analytics" class="analytics-section">
+            <div class="container">
+                <h3>Real-Time Analytics</h3>
+                <div id="chart-container">
+                    <canvas id="votingChart"></canvas>
+                </div>
+                <div class="stats">
+                    <div class="stat-card">
+                        <h4>Total Votes</h4>
+                        <p id="total-votes">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Active Voters</h4>
+                        <p id="active-voters">0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Distributed E-Voting Data Management System. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
