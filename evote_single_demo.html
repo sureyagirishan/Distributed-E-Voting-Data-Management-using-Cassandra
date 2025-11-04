@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Distributed E-Voting Data Management (Single File Demo)</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; background: #f8f8f8; margin: 0; padding: 0; }
+        .container { max-width: 700px; margin: 50px auto; padding: 30px; background: #fff; border-radius: 8px;}
+        h1, h2 { color: #333; }
+        input, button, select, textarea { margin: 10px 0; }
+        .results, .status { background: #eee; padding: 10px; margin-top: 20px; border-radius: 7px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Distributed E-Voting Data Management</h1>
+        <form id="voteForm">
+            <label for="voterid">Voter ID:</label><br>
+            <input type="text" id="voterid" name="voterid" required><br>
+            <label for="candidate">Vote For:</label><br>
+            <select id="candidate" name="candidate">
+                <option value="Candidate A">Candidate A</option>
+                <option value="Candidate B">Candidate B</option>
+                <option value="Candidate C">Candidate C</option>
+            </select><br>
+            <button type="submit">Submit Vote</button>
+        </form>
+        <div class="status" id="status"></div>
+        <h2>Analytics (Demo Only)</h2>
+        <button onclick="showDemoResults()">Show Demo Results</button>
+        <div class="results" id="results"></div>
+    </div>
+    <script>
+        // Minimal frontend logic for demonstration
+        let votes = {}
+        document.getElementById('voteForm').onsubmit = function(e) {
+            e.preventDefault();
+            const voterid = document.getElementById('voterid').value;
+            const candidate = document.getElementById('candidate').value;
+            if (voterid in votes) {
+                document.getElementById('status').textContent = "You have already voted!";
+            } else {
+                votes[voterid] = candidate;
+                document.getElementById('status').textContent = `Vote recorded for ${candidate}!`;
+            }
+            document.getElementById('voteForm').reset();
+        }
+
+        function showDemoResults() {
+            const counts = { "Candidate A": 0, "Candidate B": 0, "Candidate C": 0 };
+            Object.values(votes).forEach(v => { counts[v]++ });
+            document.getElementById('results').innerHTML = 
+                `<strong>Candidate A:</strong> ${counts["Candidate A"]}<br>
+                 <strong>Candidate B:</strong> ${counts["Candidate B"]}<br>
+                 <strong>Candidate C:</strong> ${counts["Candidate C"]}`;
+        }
+    </script>
+</body>
+</html>
