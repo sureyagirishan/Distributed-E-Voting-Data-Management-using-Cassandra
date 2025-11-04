@@ -1,0 +1,56 @@
+# Core Framework Dependencies
+Flask==2.3.3
+Flask-Cors==4.0.0
+python-dotenv==1.0.0
+
+# Cassandra Database Driver
+cassandra-driver==3.28.0
+
+# Data Processing and Analytics
+numpy==1.24.3
+pandas==2.0.3
+scipy==1.11.2
+
+# Database and ORM
+SQLAlchemy==2.0.21
+psycopg2-binary==2.9.7
+
+# API and Web Services
+requests==2.31.0
+httpx==0.24.1
+
+# Authentication and Security
+PyJWT==2.8.1
+bcrypt==4.0.1
+cryptography==41.0.4
+
+# Data Visualization and Reporting
+matplotlib==3.7.3
+seaborn==0.12.2
+plotly==5.17.0
+
+# Performance and Caching
+redis==5.0.0
+python-memcached==1.59
+
+# Testing and Validation
+pytest==7.4.2
+pytest-cov==4.1.0
+faker==19.6.2
+
+# Logging and Monitoring
+loguru==0.7.2
+prometheus-client==0.17.1
+
+# Asynchronous Programming
+aiohttp==3.9.0
+asyncio==3.4.3
+
+# Data Serialization
+marshmallow==3.20.1
+pydantic==2.3.0
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+uuid==1.30
